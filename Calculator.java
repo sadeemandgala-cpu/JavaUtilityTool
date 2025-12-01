@@ -7,16 +7,15 @@ public class Calculator {
         return a + b;
     }
 
-    // Feature: Factorial
+    // Feature 1: Factorial (from factor branch)
     public long factorial(int n) {
-        if (n < 0) return -1;
+        if (n < 0) return -1; // invalid input
         long fact = 1;
         for (int i = 1; i <= n; i++) fact *= i;
         return fact;
     }
 
     public static void main(String[] args) {
-
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
 
@@ -30,7 +29,6 @@ public class Calculator {
             if (choice == 3) break;
 
             switch (choice) {
-
                 case 1:
                     System.out.print("Enter two numbers: ");
                     int a = sc.nextInt();
@@ -42,7 +40,10 @@ public class Calculator {
                     System.out.print("Enter number for factorial: ");
                     int n = sc.nextInt();
                     long f = calc.factorial(n);
-                    System.out.println("Factorial: " + f);
+                    if (f == -1)
+                        System.out.println("Invalid input!");
+                    else
+                        System.out.println("Factorial: " + f);
                     break;
 
                 default:
