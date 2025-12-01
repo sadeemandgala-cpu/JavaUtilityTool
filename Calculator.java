@@ -6,6 +6,13 @@ public class Calculator {
     public int add(int a, int b) {
         return a + b;
     }
+    // Feature 1: Factorial
+    public long factorial(int n) {
+        if (n < 0) return -1; // invalid input
+        long fact = 1;
+        for (int i = 1; i <= n; i++) fact *= i;
+        return fact;
+    }
 
 
     public static void main(String[] args) {
@@ -64,4 +71,5 @@ public class Calculator {
         sc.close();
     }
 }
+
 
