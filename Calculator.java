@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 public class Calculator {
 
+    // Basic addition method
     public int add(int a, int b) {
         return a + b;
     }
 
-    // ⭐ بدون Factorial
-    // فقط Validation
-
     public static void main(String[] args) {
+
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
 
@@ -23,7 +22,7 @@ public class Calculator {
             try {
                 choice = sc.nextInt();
             } catch (Exception e) {
-                System.out.println("Invalid input! Numbers only.");
+                System.out.println("Invalid input! Please enter integers only.");
                 sc.nextLine();
                 continue;
             }
@@ -31,6 +30,7 @@ public class Calculator {
             if (choice == 2) break;
 
             switch (choice) {
+
                 case 1:
                     System.out.print("Enter two numbers: ");
                     try {
@@ -38,7 +38,7 @@ public class Calculator {
                         int b = sc.nextInt();
                         System.out.println("Result: " + calc.add(a, b));
                     } catch (Exception e) {
-                        System.out.println("Invalid input! Numbers only.");
+                        System.out.println("Invalid input! Please enter integers only.");
                         sc.nextLine();
                     }
                     break;
