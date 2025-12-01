@@ -24,24 +24,43 @@ public class Calculator {
 
         while (true) {
             System.out.print("Choose option: ");
-            int choice = sc.nextInt();
+            int choice;
+
+            // Validate menu input
+            try {
+                choice = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Invalid input! Please enter integers only.");
+                sc.nextLine(); // clear invalid input
+                continue;
+            }
 
             if (choice == 3) break;
 
             switch (choice) {
                 case 1:
                     System.out.print("Enter two numbers: ");
-                    int a = sc.nextInt();
-                    int b = sc.nextInt();
-                    System.out.println("Result: " + calc.add(a, b));
+                    try {
+                        int a = sc.nextInt();
+                        int b = sc.nextInt();
+                        System.out.println("Result: " + calc.add(a, b));
+                    } catch (Exception e) {
+                        System.out.println("Invalid input! Please enter integers only.");
+                        sc.nextLine(); // clear invalid input
+                    }
                     break;
 
                 case 2:
                     System.out.print("Enter number for factorial: ");
-                    int n = sc.nextInt();
-                    long f = calc.factorial(n);
-                    if (f == -1) System.out.println("Invalid input!");
-                    else System.out.println("Factorial: " + f);
+                    try {
+                        int n = sc.nextInt();
+                        long f = calc.factorial(n);
+                        if (f == -1) System.out.println("Invalid input!");
+                        else System.out.println("Factorial: " + f);
+                    } catch (Exception e) {
+                        System.out.println("Invalid input! Please enter integers only.");
+                        sc.nextLine(); // clear invalid input
+                    }
                     break;
 
                 default:
