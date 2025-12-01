@@ -2,19 +2,21 @@ import java.util.Scanner;
 
 public class Calculator {
 
+    // Basic addition method
     public int add(int a, int b) {
         return a + b;
     }
 
-    // ⭐ ميزة factorial فقط
+    // Feature: Factorial
     public long factorial(int n) {
         if (n < 0) return -1;
-        long f = 1;
-        for (int i = 1; i <= n; i++) f *= i;
-        return f;
+        long fact = 1;
+        for (int i = 1; i <= n; i++) fact *= i;
+        return fact;
     }
 
     public static void main(String[] args) {
+
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
 
@@ -28,6 +30,7 @@ public class Calculator {
             if (choice == 3) break;
 
             switch (choice) {
+
                 case 1:
                     System.out.print("Enter two numbers: ");
                     int a = sc.nextInt();
@@ -36,10 +39,10 @@ public class Calculator {
                     break;
 
                 case 2:
-                    System.out.print("Enter number: ");
+                    System.out.print("Enter number for factorial: ");
                     int n = sc.nextInt();
-                    long res = calc.factorial(n);
-                    System.out.println("Factorial: " + res);
+                    long f = calc.factorial(n);
+                    System.out.println("Factorial: " + f);
                     break;
 
                 default:
