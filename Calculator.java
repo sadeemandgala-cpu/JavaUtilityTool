@@ -2,13 +2,11 @@ import java.util.Scanner;
 
 public class Calculator {
 
-    // Basic addition method
     public int add(int a, int b) {
         return a + b;
     }
 
     public static void main(String[] args) {
-
         Calculator calc = new Calculator();
         Scanner sc = new Scanner(System.in);
 
@@ -19,6 +17,7 @@ public class Calculator {
             System.out.print("Choose option: ");
             int choice;
 
+            // validation feature
             try {
                 choice = sc.nextInt();
             } catch (Exception e) {
@@ -30,7 +29,6 @@ public class Calculator {
             if (choice == 2) break;
 
             switch (choice) {
-
                 case 1:
                     System.out.print("Enter two numbers: ");
                     try {
